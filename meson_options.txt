@@ -1,0 +1,6 @@
+option(
+    'manpage',
+    type: 'boolean',
+    value: true,
+    description: 'Generate manpage'
+)

@@ -1,0 +1,34 @@
+[package]
+name = "unweave"
+version = "1.0.0"
+authors = ["Alexandros Frantzis <alf82@freemail.gr>"]
+edition = "2018"
+description = "A command-line tool to unweave interleaved streams of text lines using regular expression matching"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/afrantzis/unweave"
+documentation = "https://docs.rs/unweave"
+homepage = "https://github.com/afrantzis/unweave"
+readme = "README.md"
+categories = ["command-line-utilities"]
+keywords = ["regex", "unweave", "text"]
+exclude = ["/.github/**"]
+
+[dependencies]
+regex = "1"
+getopts = "0.2"
+anyhow = "1.0"
+unicode-segmentation = "1"
+ahash = "0.8"
+memmap = "0.7"
+memchr = "2"
+
+[dev-dependencies]
+tempdir = "0.3"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.debugoptimized]
+inherits = "release"
+debug = true
