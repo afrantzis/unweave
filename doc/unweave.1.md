@@ -72,6 +72,10 @@ OPTIONS
 : in columns mode, the number of spaces to replace tab characters with (default: 8),
   or \"noexpand\" to disable tab expansion
 
+`--version`
+
+: output version information and exit
+
 `-h, --help`
 
 : display this help and exit
@@ -127,14 +131,14 @@ default (when possible) since they tend to offer considerable performance
 gains.
 
 Memory mapping will eventually cause to the whole file to be mapped into
-memory. To avoid this the **\-\-no-mmap** option can be specified to use buffered
+memory. To avoid this, the **\-\-no-mmap** option can be specified to use buffered
 line reads instead.
 
 When two passes are required, the default ("cached" two pass mode) is to
 perform a first pass that loads the file data into memory (with mmap if
 possible) and preprocesses it to extract line and column information. A second
 pass uses the loaded data and cached information to print the columns. To avoid
-keeping the extra information in memory the "reread" two pass mode can be used:
+keeping the extra information in memory, the "reread" two pass mode can be used:
 a first pass extracts minimal column info, while the second pass rereads the
 data and prints the columns. Since this approach needs to reread the data, it
 cannot be used when reading input from streaming input sources like stdin.
