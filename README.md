@@ -34,6 +34,10 @@ To build and install along with the manpage use the `meson` build system:
   `ninja -C build`
   `ninja -C build install`
 
+To install directly from crates.io:
+
+  `cargo install unweave`
+
 ### Short intro
 
 Consider the input file consisting of lines from three streams, tagged A, B and
